@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="vi">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Admin - Quản lý tài khoản</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" rel="stylesheet">
+  <link href="assets/css/style.css" rel="stylesheet">
+</head>
+<body data-page="admin">
+  <div class="admin-layout">
+    <aside class="admin-sidebar">
+      <a class="brand" href="../index.html">PHONGTRO247 Admin</a>
+      <div class="admin-menu">
+        <a class="" href="index.html"><i class="fa-solid fa-chart-line"></i>Dashboard</a>
+        <a class="active" href="accounts.html"><i class="fa-solid fa-users"></i>Quản lý tài khoản</a>
+        <a href="posts.html"><i class="fa-solid fa-building"></i>Quản lý tin đăng</a>
+        <a href="../index.html" data-logout><i class="fa-solid fa-right-from-bracket"></i>Đăng xuất</a>
+      </div>
+    </aside>
+    <main class="admin-content">
+      <section id="accounts" class="admin-section">
+        <div class="d-flex justify-content-between align-items-center mb-3"><h2 class="fw-bold mb-0">Quản lý tài khoản</h2><button id="addUserBtn" class="btn btn-primary"><i class="fa-solid fa-plus me-1"></i>Thêm tài khoản</button></div>
+        <div class="admin-card p-3 table-responsive"><table class="table align-middle"><thead><tr><th>STT</th><th>Họ tên</th><th>Email</th><th>Số điện thoại</th><th>Vai trò</th><th>Trạng thái</th><th>Hành động</th></tr></thead><tbody id="adminUsersBody"></tbody></table></div>
+      </section>
+    </main>
+  </div>
+
+  <div class="modal fade" id="userModal" tabindex="-1">
+    <div class="modal-dialog"><div class="modal-content">
+      <form id="adminUserForm">
+        <div class="modal-header"><h5 id="userModalTitle" class="modal-title">Thêm tài khoản</h5><button type="button" class="btn-close" data-bs-dismiss="modal"></button></div>
+        <div class="modal-body">
+          <input type="hidden" name="userId">
+          <div class="mb-3"><label class="form-label">Họ tên</label><input class="form-control" name="name"></div>
+          <div class="mb-3"><label class="form-label">Email</label><input class="form-control" name="email"></div>
+          <div class="mb-3"><label class="form-label">Số điện thoại</label><input class="form-control" name="phone"></div>
+          <div class="mb-3"><label class="form-label">Vai trò</label><select name="role" class="form-select"><option>Admin</option><option>Người dùng</option></select></div>
+          <div class="mb-3"><label class="form-label">Trạng thái</label><select name="status" class="form-select"><option>Hoạt động</option><option>Đã khóa</option></select></div>
+        </div>
+        <div class="modal-footer"><button type="button" class="btn btn-outline-secondary" data-bs-dismiss="modal">Đóng</button><button class="btn btn-primary">Lưu</button></div>
+      </form>
+    </div></div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/js/main.js"></script>
+</body>
+</html>
